@@ -18,7 +18,7 @@
     {{ $authors := partialCached "func/GetArticleAuthors" . .File.UniqueID }}
 */}}
 {{ $authors := slice }}
-{{ with .Params.authors  }}
+{{ with .Params.author  }}
   {{ range $name := . }}
     {{ with site.GetPage (printf "/%s/%s" "authors" ($name | urlize)) }}
       {{ $firstname := "" }}
